@@ -1,8 +1,23 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
 import NavLink from "./NavLink";
+import { afterLoginNavData, beforeLoginNavData } from "@/data/navData";
+import useTheme from "@/hooks/useTheme";
+import { useState } from "react";
 
 const Navbar = () => {
+  const user = null;
+
+  const navData = user ? afterLoginNavData : beforeLoginNavData;
+
+  const { theme, toggleTheme } = useTheme();
+
+  const [navToggle, setNavToggle] = useState(false);
+
+
+  
   return (
     <nav className="navbar sticky top-0 z-10 bg-slate-200 shadow-lg dark:bg-slate-900 lg:pr-3">
       <div className="flex-1">
@@ -11,12 +26,17 @@ const Navbar = () => {
         </Link>
       </div>
       <div
-        className={`absolute left-0 top-[4.5rem] flex w-full flex-col bg-slate-200 pb-3 pt-2 transition-all duration-300 dark:bg-slate-900 lg:static lg:w-[unset] lg:flex-row lg:bg-transparent lg:pb-0 lg:pt-0 dark:lg:bg-transparent`}
+        // hamburger menu এর toggle icon close করার সময় menu item -গুলোকে UI থেকে সরিয়ে ফেলার ‍animation দেয়ার জন্য conditionally মানে navToggle false হলে অর্থ্যাৎ না থাকলে left-[-120%] ব্যবহার করতে হয়।
+        className={`absolute ${
+          navToggle ? "left-0" : "left-[-120%]"
+        } top-[4.5rem] flex w-full flex-col bg-slate-200 pb-3 pt-2 transition-all duration-300 dark:bg-slate-900 lg:static lg:w-[unset] lg:flex-row lg:bg-transparent lg:pb-0 lg:pt-0 dark:lg:bg-transparent`}
       >
         <ul className="menu menu-horizontal flex-col px-1 lg:flex-row">
-          {[].map(({ path, title }) => (
+          {navData.map(({ path, title }) => (
             <li key={path} className="mx-auto">
               <NavLink
+                // এছাড়াও, প্রত্যেকটি menu item-কে আলাদাভাবে onClick এ পুরো manu UI টি-কে সরিয়ে ফেলার ‍animation দিতে navLink এ setNavToggle(false) দিয়ে দিতে হবে।
+                onClick={() => setNavToggle(false)}
                 href={path}
                 activeClassName="text-blue-500"
                 exact={path === "/"}
@@ -61,46 +81,52 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        
-          <div className="dropdown-end dropdown">
-            <label tabIndex={0} className="btn-ghost btn-circle avatar btn">
-              <div className="w-10 rounded-full">
-                <Image
-                  alt="user-logo"
-                  title={"displayName"}
-                  width={40}
-                  height={40}
-                  className="h-10 w-10 rounded-full"
-                />
-              </div>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu-compact dropdown-content menu rounded-box mt-3 w-52 bg-base-100 p-2 shadow"
-            >
-              <li className="mb-2 mt-1 text-center font-semibold">
-                {"displayName"}
-              </li>
-              <div className="divider my-0"></div>
-              <li className="mb-2">
-                <NavLink
-                  href="/profile"
-                  className="text-lg"
-                  activeClassName="text-blue-500"
-                >
-                  Profile
-                </NavLink>
-              </li>
-              <li className="">
-                <button className="btn-warning btn content-center text-white">
-                  Logout
-                </button>
-              </li>
-            </ul>
-          </div>
-        
+
+        <div className="dropdown-end dropdown">
+          <label tabIndex={0} className="btn-ghost btn-circle avatar btn">
+            <div className="w-10 rounded-full">
+              <Image
+                alt="user-logo"
+                title={"displayName"}
+                width={40}
+                height={40}
+                className="h-10 w-10 rounded-full"
+              />
+            </div>
+          </label>
+          <ul
+            tabIndex={0}
+            className="menu-compact dropdown-content menu rounded-box mt-3 w-52 bg-base-100 p-2 shadow"
+          >
+            <li className="mb-2 mt-1 text-center font-semibold">
+              {"displayName"}
+            </li>
+            <div className="divider my-0"></div>
+            <li className="mb-2">
+              <NavLink
+                href="/profile"
+                className="text-lg"
+                activeClassName="text-blue-500"
+              >
+                Profile
+              </NavLink>
+            </li>
+            <li className="">
+              <button className="btn-warning btn content-center text-white">
+                Logout
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        {/* Theme toggling part */}
         <label className="swap swap-rotate lg:ml-2">
-          <input type="checkbox" />
+          <input
+            // onChange এ toggleTheme-কে দিয়ে দিতে হবে।
+            onChange={toggleTheme}
+            checked={theme === "dark"}
+            type="checkbox"
+          />
           <svg
             className="swap-on h-9 w-9 fill-current"
             xmlns="http://www.w3.org/2000/svg"
@@ -117,8 +143,15 @@ const Navbar = () => {
           </svg>
         </label>
       </div>
+
+      {/* Hamburger menu toggler part */}
       <label className="swap-rotate swap btn-ghost btn-circle btn ml-2 bg-white dark:bg-slate-800 lg:hidden">
-        <input type="checkbox" />
+        <input
+          // এক্ষেত্রে, menu toggle করার জন্য পূর্বের অবস্থা মানে ((pre) => !pre) -কে এভাবে toggle করে দিতে হবে।
+          onChange={() => setNavToggle((pre) => !pre)}
+          checked={navToggle}
+          type="checkbox"
+        />
         <svg
           className="swap-off fill-current"
           xmlns="http://www.w3.org/2000/svg"
