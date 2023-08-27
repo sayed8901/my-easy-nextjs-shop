@@ -123,7 +123,7 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li className="">
-                <button onClick={handleLogout()} className="btn-warning btn content-center text-white">
+                <button onClick={handleLogout} className="btn-warning btn content-center text-white">
                   Logout
                 </button>
               </li>
