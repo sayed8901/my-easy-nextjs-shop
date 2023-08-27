@@ -1,13 +1,10 @@
 "use client";
 
-import GoogleLogin from "@/components/GoogleLogin";
 import useAuth from "@/hooks/useAuth";
-import createJWT from "@/utils/createJWT";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
-import { startTransition } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
+import { FcGoogle } from "react-icons/fc";
 
 const SignupForm = () => {
   const {
@@ -18,10 +15,7 @@ const SignupForm = () => {
     setValue,
   } = useForm();
 
-  const { createUser, profileUpdate } = useAuth();
-  const search = useSearchParams();
-  const from = search.get("redirectUrl") || "/";
-  const { replace, refresh } = useRouter();
+  const { createUser, profileUpdate, googleLogin } = useAuth();
 
   const uploadImage = async (event) => {
     const formData = new FormData();
@@ -50,25 +44,32 @@ const SignupForm = () => {
 
   const onSubmit = async (data, event) => {
     const { name, email, password, photo } = data;
-    const toastId = toast.loading("Loading...");
+    const toastID = toast.loading("Loading ...");
     try {
-      await createUser(email, password);
-      await createJWT({ email });
+      const user = await createUser(email, password);
       await profileUpdate({
         displayName: name,
         photoURL: photo,
       });
-      startTransition(() => {
-        refresh();
-        replace(from);
-        toast.dismiss(toastId);
-        toast.success("User signed in successfully");
-      });
+      toast.dismiss(toastID);
+      toast.success("User signed in successfully.");
     } catch (error) {
-      toast.dismiss(toastId);
-      toast.error(error.message || "User not signed in");
+      toast.dismiss(toastID);
+      toast.error(error.message || "User not signed in!!");
     }
   };
+
+    const handleGoogleLogin = async () => {
+      const toastID = toast.loading("Loading ...");
+      try {
+        const user = await googleLogin();
+        toast.dismiss(toastID);
+        toast.success("User signed in successfully.");
+      } catch (error) {
+        toast.dismiss(toastID);
+        toast.error(error.message || "User not signed in!!");
+      }
+    };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -178,7 +179,13 @@ const SignupForm = () => {
         </Link>
       </p>
       <div className="divider mt-5">OR</div>
-      <GoogleLogin from={from} />
+      <button
+        onClick={handleGoogleLogin}
+        type="button"
+        className="btn btn-primary mt-5 mx-auto"
+      >
+        <FcGoogle className="text-3xl mr-3" /> Continue with Google
+      </button>
     </form>
   );
 };

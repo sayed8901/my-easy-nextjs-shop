@@ -98,7 +98,9 @@ const Navbar = () => {
                 <Image
                   alt="user-logo"
                   title={displayName}
-                  src={photoURL}
+                  src={
+                    photoURL || "https://i.ibb.co/KD1Lrty/coach-football.png"
+                  }
                   width={40}
                   height={40}
                   className="h-10 w-10 rounded-full"
@@ -123,7 +125,10 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li className="">
-                <button onClick={handleLogout} className="btn-warning btn content-center text-white">
+                <button
+                  onClick={handleLogout}
+                  className="btn-warning btn content-center text-white"
+                >
                   Logout
                 </button>
               </li>
