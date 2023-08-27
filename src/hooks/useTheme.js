@@ -6,7 +6,7 @@ const useTheme = () => {
   const theme = useContext(ThemeContext);
 
   // 3.1.1 এছাড়াও, Server এ আমাদের ‍application run হওয়ার সময় by default কোন theme থাকবে না।
-  // 3.1.2 এজন্য আমাদেরকে আগে বুঝতে বা বের করতে হবে যে, আমদের ‍application টি কি বর্তমানে client এ নাকি ‍server এ run হচ্ছে
+  // 3.1.2 এজন্য আমাদেরকে আগে বুঝতে বা বের করতে হবে যে, আমাদের ‍application টি কি বর্তমানে client এ নাকি ‍server এ run হচ্ছে
 
   // 3.2.1 typeof window !== "undefined" দ্বারা check করা হচ্ছে যে, window এর typeof undefined না কিনা? কেননা, আমরা জানি, window object টা শুধুমাত্র browser এ available, এটি client-side এ পাওয়া যায় না।
   // 3.2.2 তার মানে হচ্ছে, window যদি undefined না হয় তার মানে এটি আছে, তাহলে isClient variable -টি হলো client-side.
