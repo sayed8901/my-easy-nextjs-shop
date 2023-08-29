@@ -25,7 +25,7 @@ const FeaturedTeaProducts = () => {
             <Image className="mx-auto pb-3" src={teaImg1} alt="" />
             <h3 className="text-2xl font-extrabold">Milk Tea</h3>
             <p>
-              A creamy blend that's pure comfort in a cup, perfect for cozy
+              A creamy blend with pure comfort in a cup, perfect for cozy
               mornings and relaxed afternoons.
             </p>
           </div>

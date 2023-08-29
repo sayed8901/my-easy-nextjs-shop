@@ -4,6 +4,7 @@ import About from './About';
 import FeaturedTeaProducts from './FeaturedTeaProducts';
 import TeaGridStyle from './TeaGridStyle';
 import SuperClients from './SuperClients';
+import Contact from './Contact';
 
 const HomePage = () => {
     return (
@@ -13,6 +14,7 @@ const HomePage = () => {
             <FeaturedTeaProducts />
             <TeaGridStyle />
             <SuperClients />
+            <Contact />
         </div>
     );
 };

@@ -1,5 +1,5 @@
-import mainImg from "@/assets/components-photo.jpeg";
-import partImg from "@/assets/435.jpg";
+import partImg from "@/assets/components-photo.jpeg";
+import mainImg from "@/assets/435.jpg";
 import Image from "next/image";
 
 const About = () => {
