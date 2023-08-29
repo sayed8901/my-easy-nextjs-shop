@@ -19,20 +19,21 @@ const About = () => {
           />
         </div>
         <div className="lg:w-1/2">
-          <h3 className="text-3xl text-error font-bold">About Us</h3>
-          <h1 className="text-5xl font-bold pt-3 pb-8">
-            We are committed to provide quality products
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold pb-8">
+            We are committed to provide quality products with top-notch service
           </h1>
           <p>
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which do not look even slightly
-            believable.{" "}
+            Welcome to our shop.
+            <br />
+            we are not just a store; we are a curation of passion, style, and
+            quality. Our journey is built on a foundation of dedication and a
+            commitment to delivering excellence.{" "}
           </p>
           <p className="py-6">
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which do not look even slightly
-            believable.{" "}
+            From carefully selected products to an unrivaled shopping
+            experience, we are here to make every moment memorable. Join us in
+            exploring the stories that shape our brand and the values that drive
+            us forward.{" "}
           </p>
           <button className="btn btn-error text-white">Get More Info</button>
         </div>
