@@ -3,6 +3,7 @@ import HeroSlider from './HeroSlider';
 import About from './About';
 import FeaturedTeaProducts from './FeaturedTeaProducts';
 import TeaGridStyle from './TeaGridStyle';
+import SuperClients from './SuperClients';
 
 const HomePage = () => {
     return (
@@ -11,6 +12,7 @@ const HomePage = () => {
             <About />
             <FeaturedTeaProducts />
             <TeaGridStyle />
+            <SuperClients />
         </div>
     );
 };
