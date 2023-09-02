@@ -34,6 +34,7 @@ const Navbar = () => {
       });
       const data = await res.json();
       toast.success("Successfully Logout!");
+      
       // বর্তমান path কি private route কিনা তা check করতে, যদি হয়, তাহলে logout successful হওয়ার পরে ’/’ দ্বারা homepage এ নিয়ে যাবে।
       if(path.includes('/dashboard') || path.includes('/profile')) {
         replace('/');
