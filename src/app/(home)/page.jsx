@@ -5,12 +5,14 @@ import FeaturedTeaProducts from './FeaturedTeaProducts';
 import TeaGridStyle from './TeaGridStyle';
 import SuperClients from './SuperClients';
 import Contact from './Contact';
+import Categories from './Categories';
 
 const HomePage = () => {
     return (
         <div>
             <HeroSlider />
             <About />
+            <Categories />
             <FeaturedTeaProducts />
             <TeaGridStyle />
             <SuperClients />
