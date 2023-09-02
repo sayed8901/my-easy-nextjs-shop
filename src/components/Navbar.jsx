@@ -8,6 +8,8 @@ import useTheme from "@/hooks/useTheme";
 import { useState } from "react";
 import useAuth from "@/hooks/useAuth";
 import { toast } from "react-hot-toast";
+import { usePathname, useRouter } from "next/navigation";
+
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -18,11 +20,27 @@ const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
 
   const [navToggle, setNavToggle] = useState(false);
+  
+  const {replace} = useRouter();
+  const path = usePathname();
 
 
   const handleLogout = async () => {
-    await logout();
-    toast.success("Successfully Logout!");
+    try {
+      await logout();
+      // to remove secret-token from cookie while logout
+      const res = await fetch("/api/auth/logout", {
+        method: "POST",
+      });
+      const data = await res.json();
+      toast.success("Successfully Logout!");
+      // বর্তমান path কি private route কিনা তা check করতে, যদি হয়, তাহলে logout successful হওয়ার পরে ’/’ দ্বারা homepage এ নিয়ে যাবে।
+      if(path.includes('/dashboard') || path.includes('/profile')) {
+        replace('/');
+      }
+    } catch (error) {
+      toast.error("Logout not successful!!");
+    }
   }
 
 

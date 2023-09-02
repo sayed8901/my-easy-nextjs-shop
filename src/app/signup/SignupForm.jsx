@@ -3,6 +3,7 @@
 import useAuth from "@/hooks/useAuth";
 import createJWT from "@/utilities/createJWT";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
@@ -17,6 +18,11 @@ const SignupForm = () => {
   } = useForm();
 
   const { createUser, profileUpdate, googleLogin } = useAuth();
+
+  const searchParams = useSearchParams();
+  const fromLocation = searchParams.get("redirectURL") || "/";
+  const { replace } = useRouter();
+
 
   const uploadImage = async (event) => {
     const formData = new FormData();
@@ -48,13 +54,14 @@ const SignupForm = () => {
     const toastID = toast.loading("Loading ...");
     try {
       const user = await createUser(email, password);
-      createJWT({ email });
+      await createJWT({ email });
       await profileUpdate({
         displayName: name,
         photoURL: photo,
       });
       toast.dismiss(toastID);
       toast.success("User signed in successfully.");
+      replace(fromLocation);
     } catch (error) {
       toast.dismiss(toastID);
       toast.error(error.message || "User not signed in!!");
@@ -65,9 +72,10 @@ const SignupForm = () => {
     const toastID = toast.loading("Loading ...");
     try {
       const { user } = await googleLogin();
-      createJWT({ email: user.email });
+      await createJWT({ email: user.email });
       toast.dismiss(toastID);
       toast.success("User signed in successfully.");
+      replace(fromLocation);
     } catch (error) {
       toast.dismiss(toastID);
       toast.error(error.message || "User not signed in!!");

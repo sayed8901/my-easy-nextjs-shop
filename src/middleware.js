@@ -4,8 +4,10 @@ import { NextResponse } from "next/server";
 // This function can be marked `async` if using `await` inside
 export const middleware = async (request) => {
   const { pathname } = request.nextUrl;
+
   try {
     let cookie = request.cookies.get("jwt-token")?.value;
+
     //  যদি cookie না থাকে বা, cookie যদি “Bearer” লেখা দিয়ে না শুরু হয়, সেটি চেক করে Error throw করা যায়
     if (!cookie || !cookie.startsWith("Bearer")) {
       throw new Error("Invalid token");
@@ -21,7 +23,10 @@ export const middleware = async (request) => {
   }
 };
 
+
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: ["/profile/:path*", "/dashboard/:path*"],
+  matcher: [
+    "/profile/:path*", "/dashboard/:path*",
+  ],
 };
