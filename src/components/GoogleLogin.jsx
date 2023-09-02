@@ -1,5 +1,5 @@
 import useAuth from "@/hooks/useAuth";
-import createJWT from "@/utils/createJWT";
+import createJWT from "@/utilities/createJWT";
 import { useRouter } from "next/navigation";
 import { startTransition } from "react";
 import { toast } from "react-hot-toast";

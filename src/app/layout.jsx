@@ -1,6 +1,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import classNames from "@/utils/classNames";
+import classNames from "@/utilities/classNames";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import Providers from "@/providers";

@@ -1,6 +1,7 @@
 "use client";
 
 import useAuth from "@/hooks/useAuth";
+import createJWT from "@/utilities/createJWT";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
@@ -47,6 +48,7 @@ const SignupForm = () => {
     const toastID = toast.loading("Loading ...");
     try {
       const user = await createUser(email, password);
+      createJWT({ email });
       await profileUpdate({
         displayName: name,
         photoURL: photo,
@@ -59,17 +61,18 @@ const SignupForm = () => {
     }
   };
 
-    const handleGoogleLogin = async () => {
-      const toastID = toast.loading("Loading ...");
-      try {
-        const user = await googleLogin();
-        toast.dismiss(toastID);
-        toast.success("User signed in successfully.");
-      } catch (error) {
-        toast.dismiss(toastID);
-        toast.error(error.message || "User not signed in!!");
-      }
-    };
+  const handleGoogleLogin = async () => {
+    const toastID = toast.loading("Loading ...");
+    try {
+      const { user } = await googleLogin();
+      createJWT({ email: user.email });
+      toast.dismiss(toastID);
+      toast.success("User signed in successfully.");
+    } catch (error) {
+      toast.dismiss(toastID);
+      toast.error(error.message || "User not signed in!!");
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
