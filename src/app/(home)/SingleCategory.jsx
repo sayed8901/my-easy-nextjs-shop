@@ -5,7 +5,7 @@ const SingleCategory = ({ category }) => {
   const { _id, imageUrl, name } = category;
 
   return (
-    // <Link href={`/products?categoryId=${_id}`}>
+    <Link href={`/products?categoryId=${_id}`}>
       <div className="card card-compact bg-base-100 shadow-2xl h-full justify-between">
         <figure>
           <Image
@@ -20,7 +20,7 @@ const SingleCategory = ({ category }) => {
           <h2 className="card-title">{name}</h2>
         </div>
       </div>
-    // </Link>
+    </Link>
   );
 };
 
