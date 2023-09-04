@@ -1,7 +1,6 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
 
 // mongoDB এর return করার পরে, মূলত mongoDB related suggestion পাওয়ার জন্যে নিচের comment টি লিখতে হবে
-
 /**
  * @type {import("mongodb").Db}
  */
@@ -25,7 +24,7 @@ const DbConnect = async () => {
       },
     });
 
-    // আমাদের nextEasyShop নাম-টি-কে db তে assign করে দিতে...
+    // আমাদের nextEasyShop নাম-টি-কে db তে assign করে দিতে
     db = client.db("nextEasyShop");
 
     await client.db("admin").command({ ping: 1 });
