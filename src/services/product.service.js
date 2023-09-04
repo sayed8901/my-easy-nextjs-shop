@@ -1,5 +1,5 @@
 import "server-only";
-import DbConnect from "./DbConnect";
+import DbConnect from "./DatabaseConnect";
 
 export const getProductsFromDB = async () => {
   const db = await DbConnect();
