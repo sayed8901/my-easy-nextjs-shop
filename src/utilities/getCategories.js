@@ -1,8 +1,9 @@
-import { getCategoriesFromDB } from "@/services/category.service";
+import { getCategoriesFromDb } from "@/services/category.service";
 import { cache } from "react";
+import "server-only";
 
 const getCategories = cache(() => {
-  return getCategoriesFromDB();
+  return getCategoriesFromDb();
 });
 
 export default getCategories;

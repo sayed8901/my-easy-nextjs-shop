@@ -1,8 +1,8 @@
-import DBConnect from "./DBConnect";
 import "server-only";
+import DbConnect from "./DbConnect";
 
 export const getProductsFromDB = async () => {
-  const db = await DBConnect();
+  const db = await DbConnect();
   const productsCollection = db.collection("products");
 
   return productsCollection.find({}).toArray();
