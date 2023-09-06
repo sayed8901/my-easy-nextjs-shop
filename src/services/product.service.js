@@ -1,18 +1,19 @@
-// const { default: DbConnect } = require("./DbConnect");
 import { ObjectId } from "mongodb";
 import DbConnect from "./DbConnect";
 import "server-only";
 
 export const getProductsFromDb = async (categoryId) => {
   const db = await DbConnect();
-  
+
   const productsCollection = db.collection("products");
+  //   প্রাথমিকভাবে query = {} ম্বারা সব products গুলো load করা যায়
   let query = {};
-  if (categoryId){
-    // query.categoryId = categoryId;
+
+  //   এবং, category-wise products load করার জন্যে তা query -তে set করে দিতে হয়
+  if (categoryId) {
     query = {
-        categoryId : categoryId,
-    }
+      categoryId: categoryId,
+    };
   }
 
   return productsCollection.find(query).toArray();
