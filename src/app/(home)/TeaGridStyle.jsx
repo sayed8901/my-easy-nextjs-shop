@@ -4,7 +4,6 @@ import Image from "next/image";
 
 const TeaGridStyle = () => {
     return (
-      <div className="hero min-h-screen">
         <div className="container mx-auto my-10 grid grid-cols-1 md:grid-cols-2">
           {/* tea grid part */}
           <div className="md:w-5/6 grid grid-cols-2 grid-rows-3 gap-6 order-2 md:order-1">
@@ -43,7 +42,6 @@ const TeaGridStyle = () => {
             </p>
           </div>
         </div>
-      </div>
     );
 };
 

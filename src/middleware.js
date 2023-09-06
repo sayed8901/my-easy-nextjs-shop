@@ -27,6 +27,9 @@ export const middleware = async (request) => {
 // See "Matching Paths" below to learn more
 export const config = {
   matcher: [
-    "/profile/:path*", "/dashboard/:path*",
+    "/profile/:path*",
+    "/dashboard/:path*",
+    "/login/:path*",
+    "/signup/:path*",
   ],
 };

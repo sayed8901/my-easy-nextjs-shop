@@ -12,8 +12,16 @@ const commonNavData = [
     title: "Blogs",
   },
   {
+    path: "/categories",
+    title: "Categories",
+  },
+  {
     path: "/products",
     title: "Products",
+  },
+  {
+    path: "/coffeeShop",
+    title: "Coffee-shop",
   },
 ];
 

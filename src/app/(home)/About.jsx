@@ -4,8 +4,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <div className="hero min-h-screen">
-      <div className="hero-content flex-col lg:flex-row gap-2">
+      <div className="hero-content flex-col lg:flex-row gap-2 my-24">
         <div className="lg:w-1/2 relative">
           <Image
             src={mainImg}
@@ -38,7 +37,6 @@ const About = () => {
           <button className="btn btn-error text-white">Get More Info</button>
         </div>
       </div>
-    </div>
   );
 };
 

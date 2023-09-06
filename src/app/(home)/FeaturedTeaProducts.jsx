@@ -6,11 +6,13 @@ import Image from "next/image";
 
 const FeaturedTeaProducts = () => {
   return (
-    <div className="hero h-min-screen">
       <div className="container mx-auto my-10">
         <div className="mx-auto md:w-3/4 text-center space-y-6">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold pb-4">
-            Our Featured Tea Items
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold pb-2">
+            Featured Coffee Shop
+          </h1>
+          <h1 className="text-lg md:text-xl lg:text-2xl font-bold pb-8">
+            Coffee Shop is one of our sister concern partnering brand
           </h1>
           <p>
             Explore a delightful range of taste that cater to every palate.
@@ -55,7 +57,6 @@ const FeaturedTeaProducts = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
