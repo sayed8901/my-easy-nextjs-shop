@@ -1,5 +1,6 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
 
+// mongoDB এর return করার পরে, মূলত mongoDB related suggestion পাওয়ার জন্যে নিচের comment টি লিখতে হবে
 /**
  * @type {import("mongodb").Db}
  */
@@ -7,29 +8,33 @@ import { MongoClient, ServerApiVersion } from "mongodb";
 let db;
 
 const DbConnect = async () => {
-    if (db) return db;
+  // যদি db connected থাকে তাহলে সেটিকে return করে দিবে মানে দেখাবে, নিচের আর কোন code execute করবে না।
+  if (db) return db;
 
-    try {
-        const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.ebwgrc3.mongodb.net/?retryWrites=true&w=majority`;
-        // Create a MongoClient with a MongoClientOptions object to set the Stable API version
-        const client = new MongoClient(uri, {
-          serverApi: {
-            version: ServerApiVersion.v1,
-            strict: true,
-            deprecationErrors: true,
-          },
-        });
+  try {
+    const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.ebwgrc3.mongodb.net/?retryWrites=true&w=majority`;
+    //   "mongodb+srv://<username>:<password>@cluster0.ebwgrc3.mongodb.net/?retryWrites=true&w=majority";
+    
+    // Create a MongoClient with a MongoClientOptions object to set the Stable API version
+    const client = new MongoClient(uri, {
+      serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+      },
+    });
 
-        db = client.db("nextEasyShop");
+    // আমাদের nextEasyShop -টি-কে db তে assign করে দিতে
+    db = client.db(`${process.env.DB_NAME}`);
 
-        await client.db("admin").command({ ping: 1 });
-        console.log(
-          "Pinged your deployment. You successfully connected to MongoDB!"
-        );
-        return db;
-    } catch (error) {
-        console.log(error.message);
-    }
+    await client.db("admin").command({ ping: 1 });
+    console.log(
+      "Pinged your deployment. You successfully connected to MongoDB!"
+    );
+    return db;
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 export default DbConnect;
