@@ -12,7 +12,7 @@ const HomePage = () => {
         <div>
             <HeroSlider />
             <About />
-            {/* <Categories /> */}
+            <Categories />
             <FeaturedTeaProducts />
             <TeaGridStyle />
             <SuperClients />
