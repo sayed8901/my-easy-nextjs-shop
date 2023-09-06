@@ -23,7 +23,7 @@ const FeaturedTeaProducts = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-12">
-          <div className=" bg-base-300 shadow-xl text-center space-y-3 p-6 rounded-lg mx-6 sm:mx-0">
+          <div className="bg-base-200 shadow-xl text-center space-y-3 p-6 rounded-lg mx-6 sm:mx-0">
             <Image className="mx-auto pb-3" src={teaImg1} alt="" />
             <h3 className="text-2xl font-extrabold">Milk Tea</h3>
             <p>
@@ -31,7 +31,7 @@ const FeaturedTeaProducts = () => {
               mornings and relaxed afternoons.
             </p>
           </div>
-          <div className=" bg-base-300 shadow-xl text-center space-y-3 p-6 rounded-lg mx-6 sm:mx-0">
+          <div className="bg-base-200 shadow-xl text-center space-y-3 p-6 rounded-lg mx-6 sm:mx-0">
             <Image className="mx-auto pb-3" src={teaImg2} alt="" />
             <h3 className="text-2xl font-extrabold">Black Tea</h3>
             <p>
@@ -39,7 +39,7 @@ const FeaturedTeaProducts = () => {
               classic that never fails to awaken your senses.
             </p>
           </div>
-          <div className=" bg-base-300 shadow-xl text-center space-y-3 p-6 rounded-lg mx-6 sm:mx-0">
+          <div className="bg-base-200 shadow-xl text-center space-y-3 p-6 rounded-lg mx-6 sm:mx-0">
             <Image className="mx-auto pb-3" src={teaImg3} alt="" />
             <h3 className="text-2xl font-extrabold">Lemon Tea</h3>
             <p>
@@ -47,7 +47,7 @@ const FeaturedTeaProducts = () => {
               that brightens up any moment.
             </p>
           </div>
-          <div className=" bg-base-300 shadow-xl text-center space-y-3 p-6 rounded-lg mx-6 sm:mx-0">
+          <div className="bg-base-200 shadow-xl text-center space-y-3 p-6 rounded-lg mx-6 sm:mx-0">
             <Image className="mx-auto pb-3" src={teaImg4} alt="" />
             <h3 className="text-2xl font-extrabold">Green Tea</h3>
             <p>
