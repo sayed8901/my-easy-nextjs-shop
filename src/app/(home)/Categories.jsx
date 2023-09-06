@@ -1,8 +1,7 @@
-import getCategories from "@/utilities/getCategories";
 import SingleCategory from "./SingleCategory";
 
 const Categories = async () => {
-  const categories = await getCategories();
+  const categories = [];
 
   return (
     <div className="hero min-h-screen -mt-36">
