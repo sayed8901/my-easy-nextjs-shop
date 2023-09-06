@@ -1,8 +1,7 @@
 [
   {
-    "_id": { "$oid": "6464c6f1a2bd407882de50ec" },
     "title": "Levi's 501 Jeans",
-    "categoryId": "616e68012f58f213a6745b1b",
+    "categoryId": "64f853799d40a03e24355d77",
     "imageUrls": [
       "/products/levis501_1.jpg",
       "/products/levis501_2.jpg",
@@ -19,9 +18,8 @@
     "brand": "Levi's"
   },
   {
-    "_id": { "$oid": "6464c6f1a2bd407882de50ed" },
     "title": "Nike Air Max 270",
-    "categoryId": "616e68012f58f213a6745b1b",
+    "categoryId": "64f853799d40a03e24355d79",
     "imageUrls": [
       "/products/airmax270_1.jpg",
       "/products/airmax270_2.jpg",
@@ -38,9 +36,8 @@
     "brand": "Nike"
   },
   {
-    "_id": { "$oid": "6464c6f1a2bd407882de50ee" },
     "title": "Breville Barista Express",
-    "categoryId": "616e68012f58f213a6745b1c",
+    "categoryId": "64f853799d40a03e24355d7b",
     "imageUrls": [
       "/products/baristaexpress_1.jpg",
       "/products/baristaexpress_2.jpg",
@@ -57,9 +54,8 @@
     "brand": "Breville"
   },
   {
-    "_id": { "$oid": "6464c6f1a2bd407882de50ef" },
     "title": "Sony PlayStation 5",
-    "categoryId": "616e68012f58f213a6745b1c",
+    "categoryId": "64f853799d40a03e24355d79",
     "imageUrls": [
       "/products/ps5_1.jpg",
       "/products/ps5_2.jpg",
@@ -76,9 +72,8 @@
     "brand": "Sony"
   },
   {
-    "_id": { "$oid": "6464c6f1a2bd407882de50f1" },
     "title": "To Kill a Mockingbird",
-    "categoryId": "616e68012f58f213a6745b1d",
+    "categoryId": "64f853799d40a03e24355d78",
     "imageUrls": [
       "/products/tokillamockingbird_1.jpg",
       "/products/tokillamockingbird_2.jpg",
@@ -95,9 +90,8 @@
     "brand": "HarperCollins"
   },
   {
-    "_id": { "$oid": "6464c6f1a2bd407882de50f0" },
     "title": "The Great Gatsby",
-    "categoryId": "616e68012f58f213a6745b1d",
+    "categoryId": "64f853799d40a03e24355d78",
     "imageUrls": [
       "/products/greatgatsby_1.jpg",
       "/products/greatgatsby_2.jpg",
@@ -114,9 +108,8 @@
     "brand": "Penguin Books"
   },
   {
-    "_id": { "$oid": "6464c6f1a2bd407882de50f3" },
     "title": "Dumbbell Set",
-    "categoryId": "616e68012f58f213a6745b1e",
+    "categoryId": "64f853799d40a03e24355d79",
     "imageUrls": [
       "/products/dumbbellset_1.jpg",
       "/products/dumbbellset_2.jpg",
@@ -133,9 +126,8 @@
     "brand": "Fitness Gear"
   },
   {
-    "_id": { "$oid": "6464c6f1a2bd407882de50f4" },
     "title": "Yoga Mat",
-    "categoryId": "616e68012f58f213a6745b1e",
+    "categoryId": "64f853799d40a03e24355d79",
     "imageUrls": [
       "/products/yogamat_2.jpg",
       "/products/yogamat_1.jpg",
@@ -152,9 +144,8 @@
     "brand": "Liforme"
   },
   {
-    "_id": { "$oid": "6464c6f1a2bd407882de50f5" },
     "title": "Resistance Bands",
-    "categoryId": "616e68012f58f213a6745b1e",
+    "categoryId": "64f853799d40a03e24355d79",
     "imageUrls": [
       "/products/resistancebands_1.jpg",
       "/products/resistancebands_2.jpg",
@@ -171,9 +162,8 @@
     "brand": "Fit Simplify"
   },
   {
-    "_id": { "$oid": "6464c6f1a2bd407882de50e9" },
     "title": "iPhone 13 Pro",
-    "categoryId": "616e68012f58f213a6745b1a",
+    "categoryId": "64f853799d40a03e24355d7a",
     "imageUrls": [
       "/products/iphone13pro1.jpg",
       "/products/iphone13pro2.jpg",
@@ -190,9 +180,8 @@
     "brand": "Apple"
   },
   {
-    "_id": { "$oid": "6464c6f1a2bd407882de50ea" },
     "title": "Samsung Galaxy S21",
-    "categoryId": "616e68012f58f213a6745b1a",
+    "categoryId": "64f853799d40a03e24355d7a",
     "imageUrls": [
       "/products/galaxys21_1.jpg",
       "/products/galaxys21_2.jpg",
@@ -209,9 +198,8 @@
     "brand": "Samsung"
   },
   {
-    "_id": { "$oid": "6464c6f1a2bd407882de50eb" },
     "title": "Canon EOS R6",
-    "categoryId": "616e68012f58f213a6745b1a",
+    "categoryId": "64f853799d40a03e24355d7a",
     "imageUrls": [
       "/products/eosr6_1.jpg",
       "/products/eosr6_2.jpg",
@@ -228,9 +216,8 @@
     "brand": "Canon"
   },
   {
-    "_id": { "$oid": "6464c6f1a2bd407882de50f2" },
     "title": "The Da Vinci Code",
-    "categoryId": "616e68012f58f213a6745b1d",
+    "categoryId": "64f853799d40a03e24355d78",
     "imageUrls": [
       "/products/davincicode_1.jpg",
       "/products/davincicode_2.jpg",
