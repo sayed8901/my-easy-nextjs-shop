@@ -1,7 +1,10 @@
+// import { getCategoriesFromDb } from "@/services/category.service";
+import getCategories from "@/utilities/getCategories";
 import SingleCategory from "./SingleCategory";
 
 const Categories = async () => {
-  const categories = [];
+  // const categories = await getCategoriesFromDb();
+  const categories = await getCategories();
 
   return (
     <div className="hero min-h-screen -mt-36">
