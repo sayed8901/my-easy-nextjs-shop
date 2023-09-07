@@ -30,3 +30,18 @@ export const getProductByIdFromDb = async (id) => {
   
   return productsCollection.findOne(query);
 };
+
+
+
+export const getMultipleProductsByIdsFromDb = async (ids = []) => {
+  const db = await DbConnect();
+
+  const productsCollection = db.collection("products");
+  const idsWithObjectId = ids.map((id) => new ObjectId(id));
+  
+  const query = {
+    _id: { $in: idsWithObjectId },
+  };
+
+  return productsCollection.find(query).toArray();
+};

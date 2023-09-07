@@ -5,11 +5,11 @@ import Link from "next/link";
 import NavLink from "./NavLink";
 import { afterLoginNavData, beforeLoginNavData } from "@/data/navData";
 import useTheme from "@/hooks/useTheme";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import useAuth from "@/hooks/useAuth";
 import { toast } from "react-hot-toast";
 import { usePathname, useRouter } from "next/navigation";
-
+import useCart from "@/hooks/useCart";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -20,10 +20,16 @@ const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
 
   const [navToggle, setNavToggle] = useState(false);
-  
-  const {replace} = useRouter();
-  const path = usePathname();
 
+  const { cart } = useCart();
+  const total = useMemo(
+    () =>
+      cart.reduce((pre, current) => current.price * current.quantity + pre, 0),
+    [cart]
+  );
+
+  const { replace } = useRouter();
+  const path = usePathname();
 
   const handleLogout = async () => {
     try {
@@ -34,17 +40,15 @@ const Navbar = () => {
       });
       const data = await res.json();
       toast.success("Successfully Logout!");
-      
+
       // বর্তমান path কি private route কিনা তা check করতে, যদি হয়, তাহলে logout successful হওয়ার পরে ’/’ দ্বারা homepage এ নিয়ে যাবে।
-      if(path.includes('/dashboard') || path.includes('/profile')) {
-        replace('/');
+      if (path.includes("/dashboard") || path.includes("/profile")) {
+        replace("/");
       }
     } catch (error) {
       toast.error("Logout not successful!!");
     }
-  }
-
-
+  };
 
   return (
     <nav className="navbar sticky top-0 z-10 bg-slate-200 shadow-lg dark:bg-slate-900 lg:pr-3">
@@ -92,7 +96,7 @@ const Navbar = () => {
                 />
               </svg>
               <span className="badge badge-sm indicator-item bg-primary text-white dark:text-gray-300">
-                1
+                {cart.length}
               </span>
             </div>
           </label>
@@ -101,11 +105,15 @@ const Navbar = () => {
             className="card dropdown-content card-compact mt-3 w-52 bg-base-100 shadow"
           >
             <div className="card-body">
-              <span className="text-lg font-bold">1 Items</span>
-              <span className="text-info">Total: $999</span>
-              <div className="card-actions">
-                <button className="btn-primary btn-block btn">View cart</button>
-              </div>
+              <span className="text-lg font-bold">{cart.length} Items</span>
+              <span className="text-info">Total: ${total.toFixed(2)}</span>
+              <Link href="/checkout" className="block w-full">
+                <div className="card-actions">
+                  <button className="btn-primary btn-block btn">
+                    View cart
+                  </button>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
