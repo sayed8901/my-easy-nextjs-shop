@@ -1,4 +1,4 @@
-import { getProductByIdFromDb } from "@/services/product.service";
+import { getProductByIdFromDb } from "@/backendServices/product.service";
 import { cache } from "react";
 import "server-only";
 

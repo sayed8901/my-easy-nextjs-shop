@@ -1,4 +1,4 @@
-import { getMultipleProductsByIdsFromDb } from "@/services/product.service";
+import { getMultipleProductsByIdsFromDb } from "@/backendServices/product.service";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
@@ -24,8 +24,6 @@ export const GET = async (request) => {
     );
   }
 };
-
-
 
 export const POST = async (request) => {
   try {

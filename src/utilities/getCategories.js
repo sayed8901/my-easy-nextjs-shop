@@ -1,4 +1,4 @@
-import { getCategoriesFromDb } from "@/services/category.service";
+import { getCategoriesFromDb } from "@/backendServices/category.service";
 import { cache } from "react";
 import "server-only";
 
