@@ -21,7 +21,12 @@ const Navbar = () => {
 
   const [navToggle, setNavToggle] = useState(false);
 
+  // hooks থেকে useCart কে call করে তা থেকে cart কে পাওয়া যাবে।
   const { cart } = useCart();
+
+  // এখানে cart এর উপর reduce ‍methode ব্যবহার করে, current product এর price কে quantity দিয়ে গুন দিয়ে এবং এর সাথে previous products গুলোর price কে যোগ করে করে total price বের করা যায়।
+  // এছাড়াও, এটি যেহেতু client component সেহেতু যেকোন hook call হলেই এই পুরো component টি এবং এর মধ্যে এই reduce method টিও ততবার re-render হবে।
+  // তবে, আমরা useMemo ব্যবহার করে এটি prevent করতে পারি এবং price-কে memorize করে রাখতে পারি ও একইসাথে cart এ কোন change হলে শুধুমাত্র তখন এটিকে re-render করে updated price নিয়ে আসতে পারি।
   const total = useMemo(
     () =>
       cart.reduce((pre, current) => current.price * current.quantity + pre, 0),

@@ -44,7 +44,13 @@ const ProductDetails = async ({ params: { id } }) => {
             <AiOutlineStar key={i} className="text-2xl text-orange-500" />
           ))}
         </div>
+
+
+        {/* ⇒ <AddToCartBtn id={id} /> নামে আলাদা client component তৈরি করে ফেলা হয়েছে।
+        ⇒ এবং সেখানে dynamically params থেকে প্রাপ্ত id টি-কে দিয়ে দেয়া হয়েছে। */}
+
         <AddToCartBtn id={id} />
+
       </div>
     </div>
   );

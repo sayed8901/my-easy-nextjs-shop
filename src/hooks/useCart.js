@@ -5,6 +5,8 @@ const fetcher = async (...args) => {
   const data = await res.json();
   return data.cart;
 };
+// যেহেতু, route.js এ GET request এ cart নামে NextResponse করে দেয়া হয়েছিলো, তাই এখানে data থেকে cart -কে return করে দিতে হয়েছে।
+
 
 const useCart = () => {
   const {
