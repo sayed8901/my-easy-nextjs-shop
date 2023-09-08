@@ -15,7 +15,7 @@ const AddToCartBtn = ({ id }) => {
 
   const handleAddToCart = async (id) => {
     try {
-      // /api/cart route এ id দিয়ে query করে fetch করলে result মানে product টিকে POST করা যাবে।
+      // /api/cart এই route এ id দিয়ে query করে fetch করলে result মানে product টিকে POST করা যাবে।
       const res = await fetch(`/api/cart?id=${id}`, {
         method: "POST",
       });

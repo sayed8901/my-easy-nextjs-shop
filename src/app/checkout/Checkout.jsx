@@ -26,10 +26,6 @@ const Checkout = () => {
 
   return (
     <div>
-      {isLoading && (
-        <h1 className="text-center text-2xl font-medium">Loading...</h1>
-      )}
-
       {!isLoading && cart.length === 0 && <h1>No product added to cart</h1>}
 
       {cart.length > 0 && (
@@ -54,7 +50,7 @@ const Checkout = () => {
                   <td className="flex items-center justify-center">
                     <button
                       onClick={() => handleCount(_id, "minus")}
-                      className="btn btn-secondary mr-3"
+                      className="btn btn-info mr-3"
                       disabled={quantity <= 1}
                     >
                       <AiOutlineMinus />
