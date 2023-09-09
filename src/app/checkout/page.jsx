@@ -6,8 +6,8 @@ export const metadata = {
 
 const CheckoutPage = () => {
   return (
-    <div>
-      <h1 className="my-5 text-2xl">Review added products</h1>
+    <div className="my-4 xl:my-8">
+      <h1 className="my-5 text-2xl text-center">Review added products</h1>
       <Checkout />
     </div>
   );

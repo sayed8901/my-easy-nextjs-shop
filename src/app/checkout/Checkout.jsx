@@ -69,11 +69,13 @@ const Checkout = () => {
             </tbody>
           </table>
 
-          <Link href={"/products"}>
-            <button className="btn btn-primary mt-12 ml-auto block mr-16">
-              Go to all products
-            </button>
-          </Link>
+          <div className="flex justify-end">
+            <Link href={"/products"}>
+              <button className="btn btn-primary mt-12 ml-auto mr-16">
+                Go to all products
+              </button>
+            </Link>
+          </div>
         </div>
       )}
     </div>
