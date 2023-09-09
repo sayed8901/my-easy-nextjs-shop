@@ -4,12 +4,9 @@ import useAuth from "@/hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Profile - Easy Shop",
-};
 
 const ProfilePage = () => {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   const { uid, email, displayName, photoURL } = user || {};
 
   return (
