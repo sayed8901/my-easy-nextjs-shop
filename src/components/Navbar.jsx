@@ -83,6 +83,8 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+
+        {/* cart icon part */}
         <div className="dropdown-end dropdown lg:mr-2">
           <label tabIndex={0} className="btn-ghost btn-circle btn">
             <div className="indicator">
@@ -101,7 +103,7 @@ const Navbar = () => {
                 />
               </svg>
               <span className="badge badge-sm indicator-item bg-primary text-white dark:text-gray-300">
-                {cart.length}
+                {uid ? cart.length : 0}
               </span>
             </div>
           </label>
@@ -110,11 +112,11 @@ const Navbar = () => {
             className="card dropdown-content card-compact mt-3 w-52 bg-base-100 shadow"
           >
             <div className="card-body">
-              <span className="text-lg font-bold">{cart.length} Items</span>
-              <span className="text-info">Total: ${total.toFixed(2)}</span>
+              <span className="text-lg font-bold">{uid ? cart.length : 0} Items</span>
+              <span className="text-info">Total: ${uid ? total.toFixed(2) : 0}</span>
               <Link href="/checkout" className="block w-full">
                 <div className="card-actions">
-                  <button className="btn-primary btn-block btn">
+                  <button className="btn btn-primary btn-block">
                     View cart
                   </button>
                 </div>
@@ -123,6 +125,7 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* User Image Part */}
         {uid && (
           <div className="dropdown-end dropdown">
             <label tabIndex={0} className="btn-ghost btn-circle avatar btn">

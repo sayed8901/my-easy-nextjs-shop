@@ -5,48 +5,41 @@ const Footer = () => {
     <footer className="mt-5">
       <div className="footer grid grid-cols-3 bg-base-200 p-4 lg:p-10 text-base-content">
         <div>
-          <span className="footer-title">Services</span>
-          <Link href="/about" className="link-hover link">
+          <span className="footer-title">Trending</span>
+          <Link href="/" className="link-hover link">
             Branding
           </Link>
-          <Link href="/about" className="link-hover link">
+          <Link href="/" className="link-hover link">
             Design
           </Link>
-          <Link href="/about" className="link-hover link">
+          <Link href="/" className="link-hover link">
             Marketing
           </Link>
-          <Link href="/about" className="link-hover link">
+          <Link href="/" className="link-hover link">
             Advertisement
           </Link>
         </div>
 
         <div>
-          <span className="footer-title">Company</span>
+          <span className="footer-title">Services</span>
           <Link href="/about" className="link-hover link">
             About us
           </Link>
-          <Link href="/about" className="link-hover link">
+          <Link href="/" className="link-hover link">
             Contact
           </Link>
-          <Link href="/about" className="link-hover link">
-            Jobs
+          <Link href="/categories" className="link-hover link">
+            Categories
           </Link>
-          <Link href="/about" className="link-hover link">
-            Press kit
+          <Link href="/products" className="link-hover link">
+            Products
           </Link>
         </div>
 
         <div>
-          <span className="footer-title">Legal</span>
-          <Link href="/about" className="link-hover link">
-            Terms of use
-          </Link>
-          <Link href="/about" className="link-hover link">
-            Privacy policy
-          </Link>
-          <Link href="/about" className="link-hover link">
-            Cookie policy
-          </Link>
+          <span className="footer-title">Find us</span>
+          <p>01915158901</p>
+          <p>01730024046</p>
         </div>
       </div>
 
@@ -65,7 +58,9 @@ const Footer = () => {
           </svg>
           <p>
             Easy Shop Ltd. <br />
-            <span>Copyright © {new Date().getFullYear()} - All right reserved.</span>
+            <span>
+              Copyright © {new Date().getFullYear()} - All right reserved.
+            </span>
           </p>
         </div>
         <div className="md:place-self-center md:justify-self-end">

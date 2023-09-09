@@ -1,6 +1,7 @@
 "use client";
 
 import useCart from "@/hooks/useCart";
+import Link from "next/link";
 import { toast } from "react-hot-toast";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
@@ -67,10 +68,12 @@ const Checkout = () => {
               ))}
             </tbody>
           </table>
-          
-          <button className="btn btn-primary mt-12 ml-auto block mr-16">
-            Checkout
-          </button>
+
+          <Link href={"/products"}>
+            <button className="btn btn-primary mt-12 ml-auto block mr-16">
+              Go to all products
+            </button>
+          </Link>
         </div>
       )}
     </div>
