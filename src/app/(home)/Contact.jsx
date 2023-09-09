@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Contact = () => {
   return (
-    <div className="hero min-h-screen">
+    <div className="container mb-12 xl:mb-48">
       <div className="flex flex-col">
         <div className="text-center mb-2">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">

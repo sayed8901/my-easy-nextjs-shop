@@ -7,7 +7,7 @@ export const metadata = {
 
 const CoffeeShopPage = () => {
   return (
-    <div className="my-24 space-y-48">
+    <div className="my-12 xl:mt-24 xl:mb-48">
       <FeaturedTeaProducts />
       <TeaGridStyle />
     </div>

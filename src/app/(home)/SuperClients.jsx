@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const SuperClients = () => {
     return (
-      <div className="hero min-h-screen">
+      <div className="container mb-12 xl:mb-48">
         <div className="container mx-auto p-16 my-28 grid grid-cols-1 md:grid-cols-2 bg-gradient-to-r from-orange-400 via-orange-600 to-red-600 rounded-lg gap-x-10 lg:gap-x-5 items-center">
           {/* clients text part */}
           <div className="relative pb-12 lg:py-16">
@@ -14,8 +14,8 @@ const SuperClients = () => {
               <p>
                 Get inspired by their stories, see how they incorporate our
                 products into their lives, and join the ranks of our Super
-                Clients. You are not just shopping with us; you are becoming part
-                of a family that celebrates style, quality, and connection
+                Clients. You are not just shopping with us; you are becoming
+                part of a family that celebrates style, quality, and connection
               </p>
               <button className="btn text-orange-600 font-semibold py-2 px-5 rounded-lg bg-white">
                 Show All

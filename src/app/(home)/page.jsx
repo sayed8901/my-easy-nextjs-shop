@@ -6,24 +6,18 @@ import TeaGridStyle from "./TeaGridStyle";
 import SuperClients from "./SuperClients";
 import Contact from "./Contact";
 import Categories from "./Categories";
+import CommonFAQ from "./CommonFAQ";
 
 const HomePage = () => {
   return (
     <div>
       <HeroSlider />
-      <div className="hero min-h-screen">
-        <About />
-      </div>
-      <div className="hero min-h-screen -mt-36">
-        <Categories />
-      </div>
-      <div className="hero min-h-screen">
-        <FeaturedTeaProducts />
-      </div>
-      <div className="hero min-h-screen">
-        <TeaGridStyle />
-      </div>
+      <About />
+      <Categories />
+      <FeaturedTeaProducts />
+      <TeaGridStyle />
       <SuperClients />
+      <CommonFAQ />
       <Contact />
     </div>
   );

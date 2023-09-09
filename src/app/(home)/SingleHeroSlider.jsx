@@ -4,7 +4,7 @@ import TextModifier from 'react-text-modifier';
 const SingleHeroSlider = ({ slider={} }) => {
     const { bg, title } = slider;
     return (
-      <>
+      <div className="max-h-screen">
         <div
           className="image-layer"
           style={{
@@ -21,7 +21,7 @@ const SingleHeroSlider = ({ slider={} }) => {
             highlightClassName="text-4xl md:text-5xl lg:text-6xl text-orange-500"
           />
         </div>
-      </>
+      </div>
     );
 };
 

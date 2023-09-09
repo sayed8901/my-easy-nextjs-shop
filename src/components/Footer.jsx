@@ -3,7 +3,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="mt-5">
-      <div className="footer bg-base-200 p-10 text-base-content">
+      <div className="footer grid grid-cols-3 bg-base-200 p-4 lg:p-10 text-base-content">
         <div>
           <span className="footer-title">Services</span>
           <Link href="/about" className="link-hover link">
@@ -19,6 +19,7 @@ const Footer = () => {
             Advertisement
           </Link>
         </div>
+
         <div>
           <span className="footer-title">Company</span>
           <Link href="/about" className="link-hover link">
@@ -34,6 +35,7 @@ const Footer = () => {
             Press kit
           </Link>
         </div>
+
         <div>
           <span className="footer-title">Legal</span>
           <Link href="/about" className="link-hover link">
@@ -47,7 +49,8 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <div className="footer border-t border-base-300 bg-base-200 px-10 py-4 text-base-content">
+
+      <div className="footer flex flex-row justify-between border-t border-base-300 bg-base-200 p-4 lg:p-10 text-base-content">
         <div className="grid-flow-col items-center">
           <svg
             width="24"
@@ -62,7 +65,7 @@ const Footer = () => {
           </svg>
           <p>
             Easy Shop Ltd. <br />
-            Copyright © {new Date().getFullYear()} - All right reserved.
+            <span>Copyright © {new Date().getFullYear()} - All right reserved.</span>
           </p>
         </div>
         <div className="md:place-self-center md:justify-self-end">
