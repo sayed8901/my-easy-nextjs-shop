@@ -7,6 +7,7 @@ import SuperClients from "./SuperClients";
 import Contact from "./Contact";
 import Categories from "./Categories";
 import CommonFAQ from "./CommonFAQ";
+import ImageGallery from "./ImageGallery";
 
 const HomePage = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage = () => {
       <div className="mb-12 xl:mb-48">
         <Categories />
       </div>
+      {/* <ImageGallery /> */}
       <div className="mb-12 xl:mb-48">
         <FeaturedTeaProducts />
       </div>
