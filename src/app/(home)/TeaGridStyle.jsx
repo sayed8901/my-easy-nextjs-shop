@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const TeaGridStyle = () => {
     return (
-      <div className="container px-4 md:px-0 mx-auto grid grid-cols-1 md:grid-cols-2 mb-12 xl:mb-48">
+      <div className="container px-4 md:px-0 mx-auto grid grid-cols-1 md:grid-cols-2 mb-8 xl:mb-16">
         {/* tea grid part */}
         <div className="md:w-5/6 grid grid-cols-2 grid-rows-3 gap-6 order-2 md:order-1">
           <div className="bg-gradient-to-r from-red-200 via-red-100 to-white rounded-lg"></div>

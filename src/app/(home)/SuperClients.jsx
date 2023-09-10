@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const SuperClients = () => {
     return (
-      <div className="container mb-12 xl:mb-48">
+      <div className="container my-12 xl:my-48">
         <div className="container mx-auto p-16 my-28 grid grid-cols-1 md:grid-cols-2 bg-gradient-to-r from-orange-400 via-orange-600 to-red-600 rounded-lg gap-x-10 lg:gap-x-5 items-center">
           {/* clients text part */}
           <div className="relative pb-12 lg:py-16">

@@ -1,6 +1,7 @@
 "use client";
 
 import useCart from "@/hooks/useCart";
+import Image from "next/image";
 import Link from "next/link";
 import { toast } from "react-hot-toast";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
@@ -35,6 +36,7 @@ const Checkout = () => {
             <thead>
               <tr className="text-center">
                 <th>No.</th>
+                <th>Image</th>
                 <th>Title</th>
                 <th>Price</th>
                 <th>Brand</th>
@@ -42,30 +44,41 @@ const Checkout = () => {
               </tr>
             </thead>
             <tbody>
-              {cart.map(({ _id, title, brand, quantity, price }, i) => (
-                <tr key={_id} className="text-center">
-                  <th>{i + 1}</th>
-                  <td>{title}</td>
-                  <td>{price}</td>
-                  <td>{brand}</td>
-                  <td className="flex items-center justify-center">
-                    <button
-                      onClick={() => handleCount(_id, "minus")}
-                      className="btn btn-info mr-3"
-                      disabled={quantity <= 1}
-                    >
-                      <AiOutlineMinus />
-                    </button>
-                    <span>{quantity}</span>
-                    <button
-                      onClick={() => handleCount(_id, "plus")}
-                      className="btn btn-primary ml-3"
-                    >
-                      <AiOutlinePlus />
-                    </button>
-                  </td>
-                </tr>
-              ))}
+              {cart.map(
+                ({ _id, title, brand, quantity, price, imageUrls }, i) => (
+                  <tr key={_id} className="text-center">
+                    <th>{i + 1}</th>
+                    <td>
+                      <Image
+                        alt={title}
+                        src={imageUrls[2]}
+                        width={100}
+                        height={100}
+                        className="rounded-xl"
+                      ></Image>
+                    </td>
+                    <td>{title}</td>
+                    <td>{price}</td>
+                    <td>{brand}</td>
+                    <td className="flex items-center justify-center my-4">
+                      <button
+                        onClick={() => handleCount(_id, "minus")}
+                        className="btn btn-info mr-3"
+                        disabled={quantity <= 1}
+                      >
+                        <AiOutlineMinus />
+                      </button>
+                      <span>{quantity}</span>
+                      <button
+                        onClick={() => handleCount(_id, "plus")}
+                        className="btn btn-primary ml-3"
+                      >
+                        <AiOutlinePlus />
+                      </button>
+                    </td>
+                  </tr>
+                )
+              )}
             </tbody>
           </table>
 

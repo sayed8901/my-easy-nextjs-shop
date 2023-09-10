@@ -12,7 +12,7 @@ const ProductDetails = async ({ params: { id } }) => {
     product;
 
   return (
-    <div className="container grid grid-cols-1 md:grid-cols-3 md:gap-6 xl:gap-12 my-12 xl:my-48 mx-auto px-4">
+    <div className="container grid grid-cols-1 md:grid-cols-3 md:gap-6 xl:gap-12 my-8 xl:my-16 mx-auto px-4">
       <figure>
         <Image
           src={imageUrls[0]}

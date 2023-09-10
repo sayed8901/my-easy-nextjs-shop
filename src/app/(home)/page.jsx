@@ -12,10 +12,18 @@ const HomePage = () => {
   return (
     <div>
       <HeroSlider />
-      <About />
-      <Categories />
-      <FeaturedTeaProducts />
-      <TeaGridStyle />
+      <div className="my-12 xl:my-48">
+        <About />
+      </div>
+      <div className="mb-12 xl:mb-48">
+        <Categories />
+      </div>
+      <div className="mb-12 xl:mb-48">
+        <FeaturedTeaProducts />
+      </div>
+      <div className="my-12 xl:my-48">
+        <TeaGridStyle />
+      </div>
       <SuperClients />
       <CommonFAQ />
       <Contact />

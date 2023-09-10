@@ -4,12 +4,12 @@ import useAuth from "@/hooks/useAuth";
 import Image from "next/image";
 
 
-const ProfilePage = () => {
+const Profile = () => {
   const { user } = useAuth();
   const { uid, email, displayName, photoURL } = user || {};
 
   return (
-    <div className="hero my-12 xl:my-48">
+    <div>
       <div className="hero-content flex-col lg:flex-row gap-16">
         <Image
           alt="user-logo"
@@ -31,4 +31,4 @@ const ProfilePage = () => {
   );
 };
 
-export default ProfilePage;
+export default Profile;

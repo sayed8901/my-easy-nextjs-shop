@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <div className="container hero-content mx-auto flex-col lg:flex-row gap-6 my-12 xl:my-48">
+    <div className="container hero-content mx-auto flex-col lg:flex-row gap-6 my-8 xl:my-16">
       <div className="lg:w-1/2 relative">
         <Image
           src={mainImg}
@@ -34,7 +34,7 @@ const About = () => {
           we are here to make every moment memorable. Join us in exploring the
           stories that shape our brand and the values that drive us forward.{" "}
         </p>
-        
+
         <Link href="/products">
           <button className="btn btn-error text-white">
             Check out our products

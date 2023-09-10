@@ -7,7 +7,7 @@ const Categories = async () => {
   const categories = await getCategories();
 
   return (
-    <div className="container mb-12 xl:mb-48">
+    <div className="container my-8 xl:my-16">
       <div>
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold pb-16 text-center">
           Categories
