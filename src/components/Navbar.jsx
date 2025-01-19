@@ -60,7 +60,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar sticky top-0 z-10 bg-slate-200 shadow-lg dark:bg-slate-900 lg:pr-3">
+    <nav className="navbar px-2 lg:px-6 xl:px-10 sticky top-0 z-10 bg-slate-200 shadow-lg dark:bg-slate-900 lg:pr-3">
       <div className="flex-1">
         <Link href="/" className="btn-ghost btn text-2xl normal-case">
           Easy Shop

@@ -1,0 +1,39 @@
+[debug] [2025-01-19T18:44:54.707Z] ----------------------------------------------------------------------
+[debug] [2025-01-19T18:44:54.710Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Sayed\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-01-19T18:44:54.710Z] CLI Version:   12.5.2
+[debug] [2025-01-19T18:44:54.710Z] Platform:      win32
+[debug] [2025-01-19T18:44:54.711Z] Node Version:  v20.16.0
+[debug] [2025-01-19T18:44:54.711Z] Time:          Mon Jan 20 2025 00:44:54 GMT+0600 (Bangladesh Standard Time)
+[debug] [2025-01-19T18:44:54.711Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-01-19T18:44:54.719Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-01-19T18:44:54.720Z] > authorizing via signed-in user (sayed91515@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  I:\Extra programming files\nextJS\my-easy-nextjs-shop
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-01-19T18:45:08.625Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2025-01-19T18:45:09.665Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-01-19T18:45:09.665Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project my-easy-next-shop (my-easy-next-shop) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
