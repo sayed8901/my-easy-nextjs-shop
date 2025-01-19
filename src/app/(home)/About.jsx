@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <div className="container hero-content mx-auto flex-col lg:flex-row gap-6 my-8 xl:my-16">
+    <div className="container mx-auto hero-content flex-col lg:flex-row gap-6 my-8 xl:my-16">
       <div className="lg:w-1/2 relative">
         <Image
           src={mainImg}

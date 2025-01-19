@@ -12,7 +12,7 @@ const HomePage = () => {
   return (
     <div>
       <HeroSlider />
-      <div className="my-12 xl:my-48">
+      <div className="container mx-auto my-12 xl:my-48">
         <About />
       </div>
       <div className="mb-12 xl:mb-48">

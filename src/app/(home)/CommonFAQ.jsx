@@ -15,7 +15,7 @@ const CommonFAQ = () => {
   }, []);
 
   return (
-    <div className="container mb-12 xl:mb-48" name="FAQ">
+    <div className="container mx-auto mb-12 xl:mb-48" name="FAQ">
       <div className="sm:w-3/4 mx-auto">
         <h2 className="text-2xl lg:text-4xl font-bold text-center">
           Some <span className="text-gradient">FAQs</span>
